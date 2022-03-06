@@ -45,31 +45,31 @@ int retgap(int A[], int n){
                     break;
                 }
             if((min+1)>min && min2nd>(min+1)){
+                if(min2nd==INT_MAX && i==n-1){
+                    return min+1;
+                    }
                     store=min+1; 
                 }
             if((n-1)==j){
-                if(min==max){
-                    store=max+1;
-                }
                 if(store<1){
                     return 1;
                 }
                 return store;
             }
-            }
         }
-      
     }
+      
+}
 
 int main()
 {
 
     int A[]={4,4,5,5,2,5,-3,6,8,2}; // E.g. 1
     int B[]={3,1,5,3,3,4,12,6,8,2}; // E.g. 2
-    int C[]={1,2,3,4,6,7,8,9,10,11}; // E.g. 3
+    int C[]={1,2,3}; // E.g. 3
     printf("[[Solution for example 1 is: %d]] \n", retgap(A,10));
     printf("[[Solution for example 2 is: %d]] \n", retgap(B,10));
-    printf("[[Solution for example 2 is: %d]] \n", retgap(C,10));
+    printf("[[Solution for example 2 is: %d]] \n", retgap(C,3));
 
     return 0;
 }
